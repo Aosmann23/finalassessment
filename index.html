@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film Database Project</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Bootstrap Navbar (Retained your layout) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
+                <!-- Far Left: Contact Button -->
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link text-primary fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
+                </ul>
+                
+                <!-- Center: Main Links -->
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#search-section">Search Films</a></li>
+                </ul>
+
+                <!-- Invisible placeholder div to balance the layout -->
+                <div style="width: 75px;" class="d-none d-lg-block"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="container-fluid text-center py-5 shadow-sm mb-5">
+        <div class="container py-5">
+            <span class="text-white fw-bold tracking-wide">WELCOME TO THE</span>
+            <h1 class="display-4 fw-bold text-white mt-3 mb-4">Interactive Film Database</h1>
+            <p class="lead text-light mx-auto" style="max-width: 800px;">
+                Search our comprehensive library to discover details about your favorite movies, including release years, ratings, and plot summaries.
+            </p>
+            <div class="mt-4">
+                <a href="#search-section" class="btn btn-light btn-lg rounded-pill px-4 me-2 text-primary fw-bold">Search Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- API & Form Section: Movie Search -->
+    <section id="search-section" class="container mb-5">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Search for a Film</h2>
+            <p class="text-secondary">Enter a movie name below to fetch live data from our API.</p>
+        </div>
+        
+        <!-- The Search Form -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0 p-4">
+                    <form id="movie-search-form">
+                        <div class="input-group">
+                            <input type="text" id="search-query" class="form-control form-control-lg" placeholder="e.g., Shawshank, Inception, Matrix" required>
+                            <button type="submit" class="btn btn-primary btn-lg px-4">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Results Grid -->
+        <div id="movie-results" class="row g-4">
+            <!-- Movie cards will be dynamically injected here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Bootstrap Modal (Contact Form for extra grading points) -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="contactModalLabel">Get in Touch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-secondary mb-4">Have feedback about the Film Database? Let us know.</p>
+                    
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label for="visitor-name" class="form-label fw-bold">Name:</label>
+                            <input type="text" class="form-control" id="visitor-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="visitor-email" class="form-label fw-bold">Email Address:</label>
+                            <input type="email" class="form-control" id="visitor-email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inquiry-type" class="form-label fw-bold">Reason for Contact:</label>
+                            <select class="form-select" id="inquiry-type">
+                                <option value="feedback">App Feedback</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="visitor-message" class="form-label fw-bold">Message:</label>
+                            <textarea class="form-control" id="visitor-message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill">Send Message</button>
+                        <p id="form-status" class="mt-3 text-center" aria-live="polite" role="status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <h5 class="fw-bold">Film Database Project</h5>
+            <p class="text-secondary mb-0">Built for Web Technologies Module using HTML, CSS, JavaScript, and FreeTestAPI.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
