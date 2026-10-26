@@ -1,0 +1,66 @@
+/* ==========================================================================
+   CSS Quality Requirements for Assessment
+   Mobile First Paradigm applied throughout.
+   ========================================================================== */
+
+/* 1. HTML Selector (Sets base mobile-first rules) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dbeaf1; /* Brief suggested background */
+}
+
+/* 2. ID Selector */
+#hero {
+    background-color: #1d1a45; /* Brief suggested primary blue */
+    /* Mobile-first padding */
+    padding: 2rem 1rem; 
+}
+
+/* 3. Class Selector */
+.tracking-wide {
+    letter-spacing: 2px;
+}
+
+.movie-card {
+    /* Smooth transition for the hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+/* 4. Pseudo-class Selector */
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+    border-color: #f33535; /* Brief suggested secondary red */
+}
+
+/* 5. Attribute Selector (Targets only the text input in the search form) */
+input[type="text"] {
+    border-width: 2px;
+}
+
+input[type="text"]:focus {
+    border-color: #f33535;
+    box-shadow: 0 0 0 0.25rem rgba(243, 53, 53, 0.25);
+}
+
+/* ==========================================================================
+   6. Mobile First Media Queries
+   ========================================================================== */
+
+/* Base font size for mobile (already applied by default above) */
+.display-4 {
+    font-size: 2.5rem;
+}
+
+/* Adjustments for tablets and larger screens */
+@media (min-width: 768px) {
+    #hero {
+        padding: 5rem 2rem; 
+    }
+    
+    .display-4 {
+        font-size: 3.5rem;
+    }
+}
