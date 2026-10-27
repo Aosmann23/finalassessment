@@ -6,12 +6,12 @@
 /* 1. HTML Selector (Sets base mobile-first rules) */
 body {
     font-family: Arial, sans-serif;
-    background-color: #dbeaf1; /* Brief suggested background */
+    background-color: #dbeaf1; 
 }
 
 /* 2. ID Selector */
 #hero {
-    background-color: #1d1a45; /* Brief suggested primary blue */
+    background-color: #1d1a45; 
     /* Mobile-first padding */
     padding: 2rem 1rem; 
 }
@@ -32,7 +32,7 @@ body {
 .movie-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
-    border-color: #f33535; /* Brief suggested secondary red */
+    border-color: #f33535; 
 }
 
 /* 5. Attribute Selector (Targets only the text input in the search form) */
